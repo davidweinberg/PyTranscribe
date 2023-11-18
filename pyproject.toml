@@ -11,7 +11,7 @@ packcages = [
 ]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 jupyterlab = "^4.0.8"
 jupyterlab-quarto = "^0.2.8"
 nbdev = "^2.3.13"
