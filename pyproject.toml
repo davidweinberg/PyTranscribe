@@ -6,7 +6,7 @@ authors = ["David Weinberg <david.weinberg@anlayzere.com>"]
 license = "Apache2.0"
 readme = "README.md"
 
-packcages = [
+pacckages = [
     { include = "./PyTranscribe" },
 ]
 
