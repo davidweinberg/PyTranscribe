@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "PyTranscribe"
+  site-url: "https://davidweinberg.github.io/PyTranscribe"
+  description: "Library to convert AWS Transcribe output to Dictation format"
+  repo-branch: main
+  repo-url: "https://github.com/davidweinberg/PyTranscribe"
