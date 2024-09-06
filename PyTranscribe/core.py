@@ -13,7 +13,7 @@ class JsonToDictation:
                 ):
         self.transcribe_data = data
         self.titles = []
-        self.num_spekaers = 0
+        self.num_speakers = 0
         self.speakers = speakers
         self.speaker_map = []
         self.text = ''
@@ -23,12 +23,15 @@ class JsonToDictation:
     def load(self):
         self.titles = self.transcribe_data["results"]["transcripts"]
         self.num_speakers = self.transcribe_data["results"]["speaker_labels"]["speakers"] 
+        speaker_set = set(self.speakers)
+        #self.num_speakers = len(speaker_set)
         self.getSpeakerMap()
         
     def getSpeakerMap(self):
-        for segment in transcribe_json["results"]["speaker_labels"]["segments"]:
+        for segment in self.transcribe_data["results"]["speaker_labels"]["segments"]:
             speaker = segment["speaker_label"]            
-            self.speaker_map.append(speaker)        
+            self.speaker_map.append(speaker)
+        return (self.speaker_map)
 
     def convert(self):
         str = ''
@@ -43,22 +46,30 @@ class JsonToDictation:
 
             if current_speaker != speaker:
                 if current_speaker != '':
-                    str += "\n\n"
+                    str += "\n"
                     
                 current_speaker = speaker                
-                str += f"{speaker}:\n"
+                str += f"{speaker}:\t"
 
             if type == "punctuation":
                 str = str[:-1]
-            
-            str += f"{word} "
+
+            # translate some spellings into correct format
+            if word.upper() == "OK":
+                str += "Okay "            
+            elif word == "Cuz":
+                str += "Because "
+            elif word == "cuz":
+                str += "because "
+            else:
+                str += f"{word} "
             
         self.text = str        
         return (str)        
             
     def summary(self):
-        print(f"{self.titles=}")
         print(f"{self.num_speakers=}")
         print(f"{self.speakers=}")
         print(f"{self.speaker_map=}")
+        print(f"{speakers=}")
 
