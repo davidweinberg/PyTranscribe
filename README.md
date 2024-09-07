@@ -9,3 +9,12 @@
 poetry install
 poetry run jupter-lab
 ```
+
+## Running command-line tool
+
+Usage:
+
+``` sh
+❯ poetry run python transcribe.py
+usage: transcribe.py [-h] speakers input output
+```
