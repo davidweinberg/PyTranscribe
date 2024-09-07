@@ -12,9 +12,14 @@ poetry run jupter-lab
 
 ## Running command-line tool
 
-Usage:
-
 ``` sh
 ❯ poetry run python transcribe.py
 usage: transcribe.py [-h] speakers input output
+
+Example:
+❯ poetry run python transcribe.py 2 nbs/data/transcribe_example.json out.txt
+Reading json data...
+Converting json to conversational text...
+Saving text to file (out.txt)...
+success.
 ```
