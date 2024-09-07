@@ -35,6 +35,24 @@ class JsonToDictation:
             self.speaker_map.append(speaker)
         return (self.speaker_map)
 
+    def applyFormattingRules(self, word: str) -> str:
+        # translate some spellings into standarized format
+        if word.upper() == "OK":
+            return "Okay "
+        if word == "Cuz":
+            return "Because "
+        if word == "cuz":
+            return "because "
+            
+        # remove um and ah from text output
+        if word.upper() == "UM":
+            return ""
+        if word.upper() == "AH":
+            return ""
+
+        # none of the above, then return word with a space after
+        return f"{word} "       
+        
     def convert(self):
         str = ''
         current_speaker = ''
@@ -56,19 +74,7 @@ class JsonToDictation:
             if type == "punctuation":
                 str = str[:-1]
 
-            # translate some spellings into correct format
-            if word.upper() == "OK":
-                str += "Okay "            
-            elif word == "Cuz":
-                str += "Because "
-            elif word == "cuz":
-                str += "because "
-            elif word.upper() == "UM":
-                pass
-            elif word.upper() == "AH":
-                pass
-            else:
-                str += f"{word} "
+            str += self.applyFormattingRules(word)
             
         self.text = str        
         return (str)        
