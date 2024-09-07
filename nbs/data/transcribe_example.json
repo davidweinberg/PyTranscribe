@@ -4,7 +4,7 @@
     "results": {
         "transcripts": [
             {
-                "transcript": "I've been on hold for an hour. Sorry about that."
+                "transcript": "Um been on hold for an hour. Sorry about that."
             }
         ],
         "speaker_labels": {
@@ -85,7 +85,7 @@
                 "alternatives": [
                     {
                         "confidence": "1.0",
-                        "content": "I've"
+                        "content": "Um"
                     }
                 ],
                 "type": "pronunciation"

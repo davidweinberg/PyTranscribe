@@ -61,6 +61,10 @@ class JsonToDictation:
                 str += "Because "
             elif word == "cuz":
                 str += "because "
+            elif word.upper() == "UM":
+                pass
+            elif word.upper() == "AH":
+                pass
             else:
                 str += f"{word} "
             
