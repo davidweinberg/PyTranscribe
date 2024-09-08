@@ -3,6 +3,7 @@ on:  [workflow_dispatch, pull_request, push]
 
 jobs:
   test:
+    environment: ci
     runs-on: ubuntu-latest
     steps: 
     - uses: fastai/workflows/nbdev-ci@master
