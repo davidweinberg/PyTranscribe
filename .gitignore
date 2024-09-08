@@ -159,9 +159,9 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
-_proc/_docs/
-_proc/data/asrOutput.json
-_proc/data/output.txt
-nbs/data/asrOutput.json
-nbs/data/output.txt
+_proc/data/
+nbs/data/
 out.txt
+
+*.json
+*.mp3
